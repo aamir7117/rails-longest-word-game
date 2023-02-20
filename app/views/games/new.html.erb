@@ -1,0 +1,18 @@
+<h1>New Game</h1>
+
+<div class=<div class="form-inline" style="margin: 100px">
+  <% @letters.each do |l| %>
+    <span class="text-justify" style='background-color: lightblue; font-size: 40px; padding: 40px; margin: 10px;'><%= l %></span>
+  <% end %>
+</div>
+
+<form method='POST' action="/score" data-turbo="false" class="form-inline" style="margin: 100px">
+  <%= hidden_field_tag :letters, @letters %>
+  <%= hidden_field_tag :time, @time %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="attempt" value=<%=params[:attempt]%>>
+  <input type="submit" value="Submit">
+</form>
+
+
+<p style='margin: 100px; font-size: 30px;'>Time stared at: <%= @time %></p>

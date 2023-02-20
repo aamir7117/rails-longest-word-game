@@ -1,0 +1,9 @@
+<h1>Result</h1>
+
+<p><%= @response %></p>
+<p>Your score is <%= '%.2f' % @score %></p>
+<p>Your total score is <%= '%.2f' % session[:total_score] %></p>
+
+<p>You've played <%= session[:tries] %> times</p>
+
+<%= link_to "Play Again", new_path %>
